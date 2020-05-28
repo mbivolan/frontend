@@ -41,7 +41,7 @@ module.exports = "<div class=\"content-wrapper\">\n  <div>\n    <span class=\"fo
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".content-wrapper {\n  padding: 10px; }\n\n.sensors-wrapper {\n  padding-left: 5px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hZG1pbi9EZXNrdG9wL3BlcnNvbmFsL2Zyb250ZW5kIHNlbnNvcnMvZnJvbnRlbmQvc3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxhQUFhLEVBQUE7O0FBR2Y7RUFDRSxpQkFBaUIsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jb250ZW50LXdyYXBwZXIge1xuICBwYWRkaW5nOiAxMHB4O1xufVxuXG4uc2Vuc29ycy13cmFwcGVyIHtcbiAgcGFkZGluZy1sZWZ0OiA1cHg7XG59XG4iXX0= */"
+module.exports = ".content-wrapper {\n  padding: 10px; }\n\n.sensors-wrapper {\n  padding-left: 5px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9hcHAvc3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxhQUFhLEVBQUE7O0FBR2Y7RUFDRSxpQkFBaUIsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jb250ZW50LXdyYXBwZXIge1xuICBwYWRkaW5nOiAxMHB4O1xufVxuXG4uc2Vuc29ycy13cmFwcGVyIHtcbiAgcGFkZGluZy1sZWZ0OiA1cHg7XG59XG4iXX0= */"
 
 /***/ }),
 
@@ -58,6 +58,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_sensors_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/sensors.service */ "./src/services/sensors.service.ts");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+
 
 
 
@@ -65,8 +67,10 @@ var AppComponent = /** @class */ (function () {
     function AppComponent(sensorsService) {
         var _this = this;
         this.sensorsService = sensorsService;
-        sensorsService.getSensors().subscribe(function (sensorsResponse) {
-            _this.sensorsResponseModel = sensorsResponse;
+        Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["interval"])(1000).subscribe(function () {
+            _this.sensorsService.getSensors().subscribe(function (sensorsResponse) {
+                _this.sensorsResponseModel = sensorsResponse;
+            });
         });
     }
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -155,7 +159,7 @@ module.exports = "<span>{{sensor.name}}:</span>\n<div class=\"d-inline-block ml-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".circle, .green-bullet, .red-bullet {\n  background: white;\n  width: 13px;\n  height: 13px;\n  border-radius: 50%;\n  box-shadow: inset -1px -1px 1px 1px rgba(1, 1, 1, 0.2); }\n\n.green-bullet {\n  background-color: #00e676; }\n\n.red-bullet {\n  background-color: #ff1744; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hZG1pbi9EZXNrdG9wL3BlcnNvbmFsL2Zyb250ZW5kIHNlbnNvcnMvZnJvbnRlbmQvc3JjL2FwcC9zZW5zb3Itc3RhdHVzL3NlbnNvci1zdGF0dXMuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxpQkFBaUI7RUFDakIsV0FBVztFQUNYLFlBQVk7RUFDWixrQkFBa0I7RUFDbEIsc0RBQXNELEVBQUE7O0FBR3hEO0VBRUUseUJBQXlCLEVBQUE7O0FBRzNCO0VBRUUseUJBQXlCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9zZW5zb3Itc3RhdHVzL3NlbnNvci1zdGF0dXMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY2lyY2xlIHtcbiAgYmFja2dyb3VuZDogd2hpdGU7XG4gIHdpZHRoOiAxM3B4O1xuICBoZWlnaHQ6IDEzcHg7XG4gIGJvcmRlci1yYWRpdXM6IDUwJTtcbiAgYm94LXNoYWRvdzogaW5zZXQgLTFweCAtMXB4IDFweCAxcHggcmdiYSgxLCAxLCAxLCAwLjIpO1xufVxuXG4uZ3JlZW4tYnVsbGV0IHtcbiAgQGV4dGVuZCAuY2lyY2xlO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDBlNjc2O1xufVxuXG4ucmVkLWJ1bGxldCB7XG4gIEBleHRlbmQgLmNpcmNsZTtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmMTc0NDtcbn1cbiJdfQ== */"
+module.exports = ".circle, .green-bullet, .red-bullet {\n  background: white;\n  width: 13px;\n  height: 13px;\n  border-radius: 50%;\n  box-shadow: inset -1px -1px 1px 1px rgba(1, 1, 1, 0.2); }\n\n.green-bullet {\n  background-color: #00e676; }\n\n.red-bullet {\n  background-color: #ff1744; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9hcHAvc3JjL2FwcC9zZW5zb3Itc3RhdHVzL3NlbnNvci1zdGF0dXMuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxpQkFBaUI7RUFDakIsV0FBVztFQUNYLFlBQVk7RUFDWixrQkFBa0I7RUFDbEIsc0RBQXNELEVBQUE7O0FBR3hEO0VBRUUseUJBQXlCLEVBQUE7O0FBRzNCO0VBRUUseUJBQXlCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9zZW5zb3Itc3RhdHVzL3NlbnNvci1zdGF0dXMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY2lyY2xlIHtcbiAgYmFja2dyb3VuZDogd2hpdGU7XG4gIHdpZHRoOiAxM3B4O1xuICBoZWlnaHQ6IDEzcHg7XG4gIGJvcmRlci1yYWRpdXM6IDUwJTtcbiAgYm94LXNoYWRvdzogaW5zZXQgLTFweCAtMXB4IDFweCAxcHggcmdiYSgxLCAxLCAxLCAwLjIpO1xufVxuXG4uZ3JlZW4tYnVsbGV0IHtcbiAgQGV4dGVuZCAuY2lyY2xlO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDBlNjc2O1xufVxuXG4ucmVkLWJ1bGxldCB7XG4gIEBleHRlbmQgLmNpcmNsZTtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmMTc0NDtcbn1cbiJdfQ== */"
 
 /***/ }),
 
@@ -348,7 +352,7 @@ var SensorsService = /** @class */ (function () {
         this.httpClient = httpClient;
     }
     SensorsService.prototype.getSensors = function () {
-        var url = 'http://172.20.1.1:5000/getdata';
+        var url = 'http://185.104.181.58:8080//getdata';
         return this.httpClient.get(url);
     };
     SensorsService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -369,7 +373,7 @@ var SensorsService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/admin/Desktop/personal/frontend sensors/frontend/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /app/src/main.ts */"./src/main.ts");
 
 
 /***/ })
